@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <!-- Add gallery specific styling -->
     <style>
         .gallery-header {
@@ -85,9 +86,65 @@
     </style>
 </head>
 <body>
-    <!-- Include your existing header/navigation -->
-    <header class="header_section">
-        <!-- Your existing navigation code -->
+    <!-- Header -->
+    <div class="sub_header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <p>Your health and beauty are our priority. Free Consultation & X-Ray - Every last week of the month | We offer a wide range of dental services, including cosmetic dentistry, teeth whitening, and more</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <h2>TARA'S</h2>
+                        <p>DENTAL & AESTHETIC CENTER</p>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Services
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Dental Services</a>
+                                    <a class="dropdown-item" href="#">Aesthetic Services</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="gallery.html">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn_2" href="#">Make an Appointment</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <!-- Gallery Header -->
@@ -120,21 +177,47 @@
                         </div>
                     </a>
                 </div>
-                <!-- Add more gallery items as needed -->
+                <!-- Sample gallery items - repeat this structure for more items -->
+                <div class="col-md-4 gallery-item facility">
+                    <a href="assets/img/gallery/large/clinic1.jpg" class="gallery-popup">
+                        <img src="assets/img/gallery/thumb/clinic1.jpg" alt="Our Facility">
+                        <div class="gallery-overlay">
+                            <h4>Modern Dental Facility</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 gallery-item team">
+                    <a href="assets/img/gallery/large/team1.jpg" class="gallery-popup">
+                        <img src="assets/img/gallery/thumb/team1.jpg" alt="Our Team">
+                        <div class="gallery-overlay">
+                            <h4>Our Expert Team</h4>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Include your existing footer -->
     <footer class="footer-area">
-        <!-- Your existing footer code -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="copyright_part_text text-center">
+                        <p class="footer-text m-0">
+                            Copyright &copy; 2024 All rights reserved | Tara's Dental & Aesthetic Center
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Include your existing JS files -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script>
         $(document).ready(function() {
             // Initialize Magnific Popup
