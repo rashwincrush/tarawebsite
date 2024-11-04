@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tara's Dental & Aesthetic Center - Gallery</title>
+    <!-- Include your existing CSS files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- Add gallery specific styling -->
+    <style>
+        .gallery-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/banner/banner.jpg');
+            background-size: cover;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .gallery-filters {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-filters button {
+            background: none;
+            border: 2px solid #18573A;
+            color: #18573A;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-filters button.active,
+        .gallery-filters button:hover {
+            background: #18573A;
+            color: white;
+        }
+        
+        .gallery-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(24, 87, 58, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay h4 {
+            color: white;
+            margin: 0;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include your existing header/navigation -->
+    <header class="header_section">
+        <!-- Your existing navigation code -->
+    </header>
+
+    <!-- Gallery Header -->
+    <section class="gallery-header">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>View our dental care facilities and success stories</p>
+        </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="gallery-section section-padding">
+        <div class="container">
+            <!-- Gallery Filters -->
+            <div class="gallery-filters">
+                <button class="active" data-filter="*">All</button>
+                <button data-filter=".before-after">Before & After</button>
+                <button data-filter=".facility">Our Facility</button>
+                <button data-filter=".team">Our Team</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="row gallery-grid">
+                <!-- Gallery Item -->
+                <div class="col-md-4 gallery-item before-after">
+                    <a href="assets/img/gallery/large/image1.jpg" class="gallery-popup">
+                        <img src="assets/img/gallery/thumb/image1.jpg" alt="Before & After">
+                        <div class="gallery-overlay">
+                            <h4>Smile Transformation</h4>
+                        </div>
+                    </a>
+                </div>
+                <!-- Add more gallery items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Include your existing footer -->
+    <footer class="footer-area">
+        <!-- Your existing footer code -->
+    </footer>
+
+    <!-- Include your existing JS files -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize Magnific Popup
+            $('.gallery-popup').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+
+            // Initialize Isotope
+            var $grid = $('.gallery-grid').isotope({
+                itemSelector: '.gallery-item',
+                layoutMode: 'fitRows'
+            });
+
+            // Filter items on button click
+            $('.gallery-filters').on('click', 'button', function() {
+                var filterValue = $(this).attr('data-filter');
+                $grid.isotope({ filter: filterValue });
+                $('.gallery-filters button').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
