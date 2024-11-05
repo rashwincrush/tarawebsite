@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Include your existing header content -->
+    <title>Gallery - Tara's Dental Care</title>
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <style>
+        .tt-gallery-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .tt-gallery-filters {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .tt-filter-btn {
+            background: none;
+            border: 2px solid #0071dc;
+            color: #0071dc;
+            padding: 8px 20px;
+            margin: 0 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tt-filter-btn.active,
+        .tt-filter-btn:hover {
+            background: #0071dc;
+            color: white;
+        }
+
+        .tt-gallery-item {
+            margin: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tt-gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .tt-gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .tt-gallery-caption {
+            padding: 15px;
+            background: white;
+        }
+
+        .tt-gallery-caption h4 {
+            margin: 0;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .tt-gallery-caption p {
+            margin: 5px 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Include your existing navigation -->
+
+    <div class="tt-page-wrapper">
+        <div class="tt-gallery-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tt-section-header text-center">
+                            <h2>Our Gallery</h2>
+                            <p>Explore our dental facility and services through images</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tt-gallery-filters">
+                            <button class="tt-filter-btn active" data-category="all">All</button>
+                            <button class="tt-filter-btn" data-category="clinic">Our Clinic</button>
+                            <button class="tt-filter-btn" data-category="treatment">Treatments</button>
+                            <button class="tt-filter-btn" data-category="team">Our Team</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tt-gallery-carousel owl-carousel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include your existing footer -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize Owl Carousel
+            const galleryCarousel = $('.tt-gallery-carousel').owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: true,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    992: { items: 3 }
+                }
+            });
+
+            // Load gallery images
+            function loadGallery(category = 'all') {
+                $.get(`api/gallery/list.php${category !== 'all' ? '?category=' + category : ''}`, function (response) {
+                    if (response.success) {
+                        const items = response.data.map(item => `
+                            <div class="tt-gallery-item">
+                                <img src="${item.image_url}" alt="${item.title}">
+                                <div class="tt-gallery-caption">
+                                    <h4>${item.title}</h4>
+                                    <p>${item.category}</p>
+                                </div>
+                            </div>
+                        `).join('');
+
+                        galleryCarousel.trigger('replace.owl.carousel', [items])
+                            .trigger('refresh.owl.carousel');
+                    }
+                });
+            }
+
+            // Handle filter clicks
+            $('.tt-filter-btn').click(function () {
+                const category = $(this).data('category');
+                $('.tt-filter-btn').removeClass('active');
+                $(this).addClass('active');
+                loadGallery(category);
+            });
+
+            // Initial load
+            loadGallery();
+        });
+    </script>
+</body>
+
+</html>
