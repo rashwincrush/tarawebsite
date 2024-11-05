@@ -1,247 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Tara's Dental & Aesthetic Center - Gallery</title>
-    <!-- Include your existing CSS files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-    <!-- Add gallery specific styling -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Tara's Dental</title>
+    <!-- Maintain your existing theme CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Add Owl Carousel -->
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+
     <style>
-        .gallery-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/banner/banner.jpg');
-            background-size: cover;
-            padding: 100px 0;
-            color: white;
+        .tt-gallery-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .tt-gallery-filters {
+            margin-bottom: 30px;
             text-align: center;
         }
-        
-        .gallery-filters {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .gallery-filters button {
-            background: none;
-            border: 2px solid #18573A;
-            color: #18573A;
+
+        .tt-gallery-filters button {
             padding: 8px 20px;
-            margin: 5px;
-            border-radius: 5px;
+            margin: 0 5px;
+            border: none;
+            background: #f5f5f5;
+            color: #333;
+            border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
-        .gallery-filters button.active,
-        .gallery-filters button:hover {
+
+        .tt-gallery-filters button.active {
             background: #18573A;
-            color: white;
+            color: #fff;
         }
-        
-        .gallery-item {
-            margin-bottom: 30px;
-            position: relative;
+
+        .tt-gallery-item {
+            margin: 15px;
+            border-radius: 8px;
             overflow: hidden;
-            border-radius: 5px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        .gallery-item img {
+
+        .tt-gallery-item img {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            transition: transform 0.3s ease;
         }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(24, 87, 58, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        
-        .gallery-overlay h4 {
-            color: white;
-            margin: 0;
-            text-align: center;
+
+        .tt-gallery-item-caption {
             padding: 15px;
+            background: #fff;
+        }
+
+        .tt-gallery-item-caption h4 {
+            margin: 0 0 5px;
+            color: #18573A;
         }
     </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <div class="sub_header">
+    <div class="tt-gallery-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-12">
-                    <p>Your health and beauty are our priority. Free Consultation & X-Ray - Every last week of the month | We offer a wide range of dental services, including cosmetic dentistry, teeth whitening, and more</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="tt-section-header text-center">
+                        <h2>Our Gallery</h2>
+                        <p>Take a look at our dental facility and services</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="tt-gallery-filters">
+                        <button class="tt-filter-btn active" data-category="all">All</button>
+                        <button class="tt-filter-btn" data-category="dental">Dental Care</button>
+                        <button class="tt-filter-btn" data-category="clinic">Our Clinic</button>
+                        <button class="tt-filter-btn" data-category="team">Our Team</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="tt-gallery-carousel owl-carousel">
+                        <!-- Gallery items will be loaded here -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <header>
-        <div class="main_menu">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html">
-                        <h2>TARA'S</h2>
-                        <p>DENTAL & AESTHETIC CENTER</p>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.html">About</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Services
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Dental Services</a>
-                                    <a class="dropdown-item" href="#">Aesthetic Services</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="blog.html">Blog</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="gallery.html">Gallery</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn_2" href="#">Make an Appointment</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Gallery Header -->
-    <section class="gallery-header">
-        <div class="container">
-            <h1>Our Gallery</h1>
-            <p>View our dental care facilities and success stories</p>
-        </div>
-    </section>
-
-    <!-- Gallery Content -->
-    <section class="gallery-section section-padding">
-        <div class="container">
-            <!-- Gallery Filters -->
-            <div class="gallery-filters">
-                <button class="active" data-filter="*">All</button>
-                <button data-filter=".before-after">Before & After</button>
-                <button data-filter=".facility">Our Facility</button>
-                <button data-filter=".team">Our Team</button>
-            </div>
-
-            <!-- Gallery Grid -->
-            <div class="row gallery-grid">
-                <!-- Gallery Item -->
-                <div class="col-md-4 gallery-item before-after">
-                    <a href="assets/img/gallery/large/image1.jpg" class="gallery-popup">
-                        <img src="assets/img/gallery/thumb/image1.jpg" alt="Before & After">
-                        <div class="gallery-overlay">
-                            <h4>Smile Transformation</h4>
-                        </div>
-                    </a>
-                </div>
-                <!-- Sample gallery items - repeat this structure for more items -->
-                <div class="col-md-4 gallery-item facility">
-                    <a href="assets/img/gallery/large/clinic1.jpg" class="gallery-popup">
-                        <img src="assets/img/gallery/thumb/clinic1.jpg" alt="Our Facility">
-                        <div class="gallery-overlay">
-                            <h4>Modern Dental Facility</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 gallery-item team">
-                    <a href="assets/img/gallery/large/team1.jpg" class="gallery-popup">
-                        <img src="assets/img/gallery/thumb/team1.jpg" alt="Our Team">
-                        <div class="gallery-overlay">
-                            <h4>Our Expert Team</h4>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Include your existing footer -->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0">
-                            Copyright &copy; 2024 All rights reserved | Tara's Dental & Aesthetic Center
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Include your existing JS files -->
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
     <script>
-        $(document).ready(function() {
-            // Initialize Magnific Popup
-            $('.gallery-popup').magnificPopup({
-                type: 'image',
-                gallery: {
-                    enabled: true
+        $(document).ready(function () {
+            // Initialize Owl Carousel
+            const galleryCarousel = $('.tt-gallery-carousel').owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: true,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    992: { items: 3 }
                 }
             });
 
-            // Initialize Isotope
-            var $grid = $('.gallery-grid').isotope({
-                itemSelector: '.gallery-item',
-                layoutMode: 'fitRows'
+            // Function to load gallery items
+            function loadGallery(category = 'all') {
+                $.ajax({
+                    url: '/api/gallery/read.php',
+                    method: 'GET',
+                    data: { category: category },
+                    success: function (response) {
+                        if (response.success) {
+                            const items = response.data.map(item => `
+                                <div class="tt-gallery-item">
+                                    <img src="/${item.image_url}" alt="${item.title}">
+                                    <div class="tt-gallery-item-caption">
+                                        <h4>${item.title}</h4>
+                                        <p>${item.category}</p>
+                                    </div>
+                                </div>
+                            `).join('');
+
+                            galleryCarousel.trigger('replace.owl.carousel', [items])
+                                .trigger('refresh.owl.carousel');
+                        }
+                    }
+                });
+            }
+
+            // Handle filter clicks
+            $('.tt-filter-btn').click(function () {
+                const category = $(this).data('category');
+                $('.tt-filter-btn').removeClass('active');
+                $(this).addClass('active');
+                loadGallery(category);
             });
 
-            // Filter items on button click
-            $('.gallery-filters').on('click', 'button', function() {
-                var filterValue = $(this).attr('data-filter');
-                $grid.isotope({ filter: filterValue });
-                $('.gallery-filters button').removeClass('active');
-                $(this).addClass('active');
-            });
+            // Initial load
+            loadGallery();
         });
     </script>
 </body>
+
 </html>
