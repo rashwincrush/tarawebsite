@@ -76,33 +76,37 @@
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
-
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        
-            <!-- Dropdown for Services with Inline CSS for blur and shadow -->
-            <li class="nav-item dropdown">
-              <a href="services.html" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Services
+              <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item dropdown">
+              <a href="about.html" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About us
               </a>
               <div class="dropdown-menu" aria-labelledby="servicesDropdown" 
                 style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8); 
-                       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border: none; border-radius: 10px; transition: all 0.3s ease;">
-                <a class="dropdown-item" href="services.html">Dental</a>
-                <a class="dropdown-item" href="#">Aesthetic</a>
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border: none; border-radius: 10px; transition: all 0.3s ease;">
+                <a class="dropdown-item" href="gallery.html">Our Gallery</a>
+                <a class="dropdown-item" href="about.html">Our team</a>
               </div>
+                <li class="nav-item dropdown">
+            <a href="services.html" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Services
+            </a>
+            <div class="dropdown-menu" aria-labelledby="servicesDropdown" 
+              style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8); 
+                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border: none; border-radius: 10px; transition: all 0.3s ease;">
+              <a class="dropdown-item" href="services.html">Dental</a>
+              <a class="dropdown-item" href="#">Aesthetic</a>
+            </div>
             </li>
-        
             <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>Make an Appointment</span></a></li>
           </ul>
-        </div>
-        
-	    </div>
-	  </nav>
+          </div>
+          </div>
+        </nav>
     <!-- END nav -->
      
 
@@ -972,6 +976,22 @@
     </div>
   </div>
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  
+  dropdownToggles.forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var dropdownMenu = this.nextElementSibling;
+      if (dropdownMenu.classList.contains('show')) {
+        dropdownMenu.classList.remove('show');
+      } else {
+        dropdownMenu.classList.add('show');
+      }
+    });
+  });
+});
     document.addEventListener("DOMContentLoaded", function() {
       var whatsappIcon = document.getElementById("whatsapp-icon");
   
