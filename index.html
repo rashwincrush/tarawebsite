@@ -32,7 +32,7 @@
           box-sizing: border-box;
           color: #155724;
           font-size: 1rem;
-          font-weight: bold;
+        
           background-color: #f8f9fa;
           padding: 5px;
           position: relative;
@@ -233,7 +233,7 @@
         <div class="row justify-content-center mb-5 pb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
                 <p class="mb-2" style="font-size: 2rem;">Where Every Smile Comes from the Heart</p>
-                <p>At TARA’S Dental & Aesthetic Center, we focus on providing reliable dental care that ensures you leave with a brighter smile.</p>
+                <p>At Tara's Dental & Aesthetic Center, we focus on providing reliable dental care that ensures you leave with a brighter smile.</p>
             </div>
         </div>
         <div class="row" style="margin-top: -10vh;">
@@ -462,15 +462,15 @@
 		            <div class="block-18">
 		              <div class="text">
 		                <strong class="number" data-number="420">0</strong>
-		                <span>Happy Smiling Customer</span>
+		                <span>Happy Smiling patients & their famillies</span>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18">
 		              <div class="text">
-		                <strong class="number" data-number="120">0</strong>
-		                <span>Patients Per Year</span>
+		                <strong class="number" data-number="160">0</strong>
+		                <span>Patients per year and counting</span>
 		              </div>
 		            </div>
 		          </div>
@@ -622,7 +622,7 @@
             
             <style>
             .mission-box {
-              max-width: 800px;
+              max-width: 600px;
               margin: 40px auto;
               padding: 30px;
               background-color: #fff;
@@ -822,7 +822,7 @@
 <!-- Footer Section -->
 <footer class="ftco-footer ftco-bg-dark ftco-section">
   <div class="container">
-      <div class="row mb-5">
+      <div class="row mb-3">
           <!-- Social Media Section -->
           <div class="col-md-3">
             <div class="ftco-footer-widget mb-4">
@@ -859,17 +859,17 @@
         </div>
 
           <!-- Quick Links Section -->
-          <div class="col-md-2">
-              <div class="ftco-footer-widget mb-4">
-                  <h2 class="ftco-heading-2">Quick Links</h2>
-                  <ul class="list-unstyled footer-links">
-                      <li><a href="about.html" class="py-2 d-block">About</a></li>
-                      <li><a href="blog.html" class="py-2 d-block">Dental Tips & Advice</a></li>
-                      <li><a href="#" class="py-2 d-block"> Our Treatments</a></li>            
-                     <li><a href="contact.html" class="py-2 d-block">Contact us</a></li>
-                  </ul>
-              </div>
-          </div>
+          <div class="col-md-2 quick-links-column">  <!-- Changed from just col-md-2 -->
+            <div class="ftco-footer-widget mb-4 quick-links-widget">  <!-- Added quick-links-widget class -->
+                <h2 class="ftco-heading-2">Quick Links</h2>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="about.html" class="py-2 d-block">About</a></li>
+                    <li><a href="blog.html" class="py-2 d-block">Dental Tips & Advice</a></li>
+                    <li><a href="#" class="py-2 d-block"> Our Treatments</a></li>            
+                    <li><a href="contact.html" class="py-2 d-block">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
 
           <!-- Contact Information -->
           <div class="col-md-3">
@@ -946,14 +946,15 @@
   <img src="images/4-2-whatsapp-transparent.png" alt="WhatsApp Icon" width="50" height="50">
 </a>
 
-<style>/* Footer Main Structure */
+<style>
+/* Footer Main Structure */
   .ftco-footer {
-    padding: 6em 0 4em 0;
+    padding: 2em 0 0em 0;
   }
   
   .ftco-footer-widget {
     padding: 0;
-    margin-bottom: 4em;
+    margin-bottom: 2em;
   }
   
   /* Section Headers */
@@ -1223,6 +1224,21 @@
     
     .schedule-time {
         font-size: 14px;  /* Slightly smaller on mobile */
+    }
+}
+.quick-links-column {
+    padding-right: 15px;  /* Maintain some spacing on the right */
+    padding-left: 0;      /* Remove left padding */
+}
+
+.quick-links-widget {
+    margin-left: -25px;   /* Push content to the left */
+}
+
+/* Adjust for mobile responsiveness */
+@media (max-width: 768px) {
+    .quick-links-widget {
+        margin-left: -10px;  /* Less shift on mobile */
     }
 }
 
