@@ -1,0 +1,11 @@
+{
+  "name": "tarawebsite",
+  "version": "1.0.0",
+  "description": "Tara's Dental & Aesthetic Center Website",
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.js"
+  },
+  "dependencies": {
+    "sharp": "^0.32.6"
+  }
+}
